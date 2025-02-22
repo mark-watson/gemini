@@ -1,6 +1,7 @@
 ;;;; package.lisp
 
 (defpackage #:gemini
-  (:use #:cl #:uiop #:json #:dexador)
-  (:shadow "PARAMETER-ERROR")
-  (:export #:research))
+  (:use #:cl)
+  (:import-from #:dexador
+                #:post)  ; Only import the symbols we need
+  (:export #:generate))
