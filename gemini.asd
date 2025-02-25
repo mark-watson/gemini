@@ -1,4 +1,4 @@
-;;;; openai.asd
+;;;; gemini.asd
 
 (asdf:defsystem #:gemini
   :description "Library for using the perplexity search+LLM APIs"
