@@ -15,7 +15,7 @@ This library depends on:
 - `cl-json`
 - `dexador`
 - `alexandria`
-- `fiveam` (for tests)
+
 
 Ensure these are available in your Quicklisp local-projects or via ASDF.
 
@@ -45,7 +45,7 @@ To count the number of tokens a prompt will consume for a specific model:
 ;; => 8 (example output, actual may vary)
 ```
 
-### Chat Conversations
+### Chat Conversations NOTE: not working: TBD in progress
 
 To have a conversation with the model, provide a list of messages. Each message is a hash-table with a "role" ("user" or "model") and "text".
 ```common-lisp
@@ -63,7 +63,7 @@ To have a conversation with the model, provide a list of messages. Each message 
 ```
 *(Note: The example above uses `plist-hash-table` from `alexandria` for convenience in creating hash tables. Ensure your messages are correctly ordered for multi-turn conversations as per API requirements.)*
 
-### Streaming Generation
+### Streaming Generation: TBD work in progress
 
 For long generations, or to display text as it arrives, you can stream the response:
 ```common-lisp
@@ -78,7 +78,6 @@ For long generations, or to display text as it arrives, you can stream the respo
 ```
 
 ## Available Functions
-
 - `(gemini:generate model-id prompt)`: Generates text from a prompt using the specified model.
 - `(gemini:count-tokens model-id prompt)`: Counts the tokens for a given prompt and model.
 - `(gemini:send-chat-message model-id messages)`: Sends a chat history and gets a response from the model. `messages` should be a list of hash-tables, each specifying "role" and "text".
