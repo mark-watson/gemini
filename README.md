@@ -83,13 +83,6 @@ For long generations, or to display text as it arrives, you can stream the respo
 - `(gemini:send-chat-message model-id messages)`: Sends a chat history and gets a response from the model. `messages` should be a list of hash-tables, each specifying "role" and "text".
 - `(gemini:generate-streaming model-id prompt callback-function)`: Generates text, streaming chunks to the `callback-function`.
 
-## Running Tests
-
-The library uses the FiveAM testing framework. To run the tests:
-```common-lisp
-(asdf:test-system :gemini)
-```
-This will execute the test suite defined in `tests/test-gemini.lisp`, which includes mocked API calls.
 
 ## Original Project Information
 
