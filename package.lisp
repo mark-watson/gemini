@@ -4,4 +4,4 @@
   (:use #:cl)
   (:import-from #:dexador
                 #:post)  ; Only import the symbols we need
-  (:export #:generate))
+  (:export #:generate #:count-tokens #:send-chat-message #:generate-streaming))
