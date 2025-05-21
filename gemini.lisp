@@ -85,3 +85,23 @@ Returns the total token count as an integer."
 
 ;; Running the test
 ;; (gemini::run-tests)
+
+(defparameter *chat-history* '())
+
+(defun chat ()
+  (let ((*chat-history* ""))
+   (loop
+     (princ "Enter a prompt: ")
+     (finish-output)
+     (let ((user-prompt (read-line)))
+       (princ user-prompt)
+       (finish-output)
+       (let ((gemini-response (gemini:generate "gemini-2.0-flash"
+                (concatenate 'string *chat-history* "\nUser: " user-prompt))))
+         (princ gemini-response)
+         (finish-output)
+         (setf *chat-history*
+               (concatenate 'string "User: " user-prompt "\n" "Gemini: " gemini-response
+                                  "\n" *chat-history* "\n\n")))))))
+
+;; (gemini::chat)
