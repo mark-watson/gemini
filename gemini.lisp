@@ -75,3 +75,13 @@ Returns the total token count as an integer."
 
 ;; (gemini:count-tokens "gemini-2.0-flash" "In one sentence, explain how AI works to a child.")
 
+(defun run-tests ()
+  "Runs tests for generate and count-tokens functions."
+  (let* ((model-id "gemini-2.0-flash")
+         (prompt "In one sentence, explain how AI works to a child.")
+         (generated-text (generate model-id prompt))
+         (token-count (count-tokens model-id prompt)))
+    (format t "Generated Text: ~A~%Token Count: ~A~%" generated-text token-count)))
+
+;; Running the test
+;; (gemini::run-tests)
