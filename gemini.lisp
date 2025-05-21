@@ -7,9 +7,9 @@
 
 (defun generate (model-id prompt)
   "Generates text from a given prompt using the specified model.
-MODEL-ID: The ID of the model to use (e.g., \"gemini-1.5-pro-latest\", \"gemini-1.5-flash-latest\").
-PROMPT: The text prompt to generate content from.
-Returns the generated text as a string."
+   MODEL-ID: The ID of the model to use.
+   PROMPT: The text prompt to generate content from.
+   Returns the generated text as a string."
   (let* ((payload (make-hash-table :test 'equal)))
     (setf (gethash "contents" payload)
           (list (let ((contents (make-hash-table :test 'equal)))
